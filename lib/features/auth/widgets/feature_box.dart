@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 class FeatureBox extends StatelessWidget {
   final String imagePath;
   final String imageLabel;
-  const FeatureBox({super.key, required this.imagePath, required this.imageLabel});
+  final ColorScheme colorScheme;
+  const FeatureBox({super.key, required this.imagePath, required this.imageLabel, required this.colorScheme});
 
   @override
   Widget build(BuildContext context) {
-    final ColorScheme colorScheme = Theme.of(context).colorScheme;
     return Expanded(
       child: Container(
         padding: const EdgeInsets.all(16),
@@ -29,7 +29,7 @@ class FeatureBox extends StatelessWidget {
               style: TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.w600,
-                color: colorScheme.primary,
+                color: colorScheme.onSurface,
               ),
             ),
           ],

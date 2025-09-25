@@ -1,20 +1,28 @@
 import 'package:flutter/material.dart';
 
 class LogoWithBgCircle extends StatelessWidget {
-  const LogoWithBgCircle({super.key});
+  final ColorScheme colorScheme;
+  const LogoWithBgCircle({super.key, required this.colorScheme});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(20),
-      decoration: const BoxDecoration(
+      padding: const EdgeInsets.all(24),
+      decoration: BoxDecoration(
         color: Colors.white,
         shape: BoxShape.circle,
+        boxShadow: [
+          BoxShadow(
+            color: colorScheme.shadow.withOpacity(0.5),
+            blurRadius: 30,
+            spreadRadius: 0,
+          ),
+        ],
       ),
       child: Image.asset(
         "assets/images/app_logo.png",
-        width: 100,
-        height: 100,
+        width: 80,
+        height: 80,
       ),
     );
   }

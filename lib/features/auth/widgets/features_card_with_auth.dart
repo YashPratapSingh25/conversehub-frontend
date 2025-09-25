@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-
-import '../application/auth_provider.dart';
 import 'features_row.dart';
 import 'google_auth_button.dart';
 
 class FeaturesCardWithAuth extends StatelessWidget {
-  const FeaturesCardWithAuth({super.key});
+  final ColorScheme colorScheme;
+  const FeaturesCardWithAuth({super.key, required this.colorScheme});
 
   @override
   Widget build(BuildContext context) {
@@ -14,35 +12,44 @@ class FeaturesCardWithAuth extends StatelessWidget {
       margin: const EdgeInsets.symmetric(horizontal: 24),
       padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: colorScheme.secondary,
         borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(
+            color: colorScheme.brightness == Brightness.light ?
+                colorScheme.shadow.withOpacity(0.2):
+                Colors.transparent,
+            blurRadius: 30,
+            spreadRadius: 0,
+          ),
+        ],
       ),
-      child: const Column(
+      child: Column(
         children: [
           Text(
             "Welcome Back!",
             style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
-              color: Colors.black,
+              color: colorScheme.onSurface,
             ),
           ),
-          SizedBox(height: 12),
+          const SizedBox(height: 12),
           Text(
             "Welcome to ConverseHub! Practice, learn, and improve your communication skills.",
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 16,
-              color: Colors.grey,
+              color: colorScheme.tertiary,
               height: 1.4,
             ),
           ),
 
-          SizedBox(height: 32),
+          const SizedBox(height: 32),
 
-          FeaturesRow(),
+          FeaturesRow(colorScheme: colorScheme,),
 
-          SizedBox(height: 32),
+          const SizedBox(height: 32),
 
           GoogleAuthButton()
         ],

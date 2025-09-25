@@ -1,5 +1,8 @@
 import 'package:conversehub/core/config/app_config.dart';
 import 'package:conversehub/features/auth/presentation/auth_wrapper.dart';
+import 'package:conversehub/features/auth/presentation/login_page.dart';
+import 'package:conversehub/features/auth/presentation/splash_page.dart';
+import 'package:conversehub/features/home/presentation/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'core/themes/app_theme.dart';

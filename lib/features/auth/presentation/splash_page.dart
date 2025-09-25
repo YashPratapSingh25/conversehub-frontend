@@ -25,17 +25,17 @@ class _SplashPageState extends State<SplashPage> {
   Widget build(BuildContext context) {
     final ColorScheme colorScheme = Theme.of(context).colorScheme;
     return Scaffold(
-      backgroundColor: colorScheme.primary,
-      body: const SizedBox(
+      backgroundColor: colorScheme.surface,
+      body: SizedBox(
         width: double.infinity,
         height: double.infinity,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            LogoWithBgCircle(),
-            SizedBox(height: 30),
-            AppTitle(),
-            SizedBox(height: 20)
+            LogoWithBgCircle(colorScheme: colorScheme,),
+            const SizedBox(height: 30),
+            AppTitle(colorScheme: colorScheme),
+            const SizedBox(height: 20)
           ],
         ),
       ),
