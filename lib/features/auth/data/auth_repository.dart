@@ -1,4 +1,4 @@
-import 'package:conversehub/core/utils/secure_storage_service.dart';
+import 'dart:io';
 import 'package:dio/dio.dart';
 import '../../../core/utils/dio_service.dart';
 
@@ -6,16 +6,16 @@ class AuthRepository{
   final DioService _dio;
 
   AuthRepository({
-    required DioService dio
-  }
-  ) : _dio = dio;
+    required DioService dio,
+  }) : _dio = dio;
 
   Future <Map<String, dynamic>?> checkAccessToken(String accessToken) async {
     try{
-      Map<String, dynamic>? response = await _dio.get(
+      var response = await _dio.get(
         path: "/api/auth/check-access-token",
         headers: {"Authorization": "Bearer $accessToken"}
       );
+      print("Response: $response");
       return response;
     } catch (e) {
         print("Check Failed : $e");

@@ -11,6 +11,9 @@ final ThemeData lightTheme = ThemeData(
     tertiary: Colors.grey,
     outline: Colors.grey,
     shadow: Colors.black,
+    onError: Colors.white,
+    error: Color(0xFFB00020),
+    errorContainer: Color(0xFFB00020),
     brightness: Brightness.light,
   )
 );
@@ -26,6 +29,9 @@ final ThemeData darkTheme = ThemeData(
     tertiary: Colors.grey,
     outline: Colors.grey,
     shadow: Colors.white,
+    onError: Colors.white,
+    error: Color(0xFFB00020),
+    errorContainer: Color(0xFFB00020),
     brightness: Brightness.dark,
   )
 );

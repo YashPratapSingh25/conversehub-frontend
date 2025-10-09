@@ -40,6 +40,11 @@ dependencies:
   dio:
   flutter_secure_storage:
   shared_preferences:
+  file_picker: ^5.5.0
+  timeago:
+  flutter_slidable:
+  record:
+  audioplayers:
 
 dev_dependencies:
   flutter_test:
